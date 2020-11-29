@@ -1,0 +1,1 @@
+# Checks if user birthday is prime nos
