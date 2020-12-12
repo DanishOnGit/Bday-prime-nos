@@ -17,23 +17,36 @@ var isPrime=true;
     var split=userDob.split("/");  //returns array,split=[DD,MM]
     var date=split[0];
     //checking if date valid or not
- if(isNaN(date) || date<=0 || date>31  ){
+ if(isNaN(date) || date<=0 || date>31 ){
     console.log(chalk.red("Please enter a valid number!\n"))
-      return xyz();
+       xyz();
      } 
   
   if(date==1){
   console.log(chalk.bgBlue("\nYour DOB is neither prime nor composite!\nThank\'s alot for helping me to test my Math "+userName+"!!"));
+  keepPlaying();
 } //checking if date prime or not
  else if(date>=2 && date<=31){
       for(var i=2;i<date;i++){
       if(date%i==0){
         isPrime=false;
       console.log(chalk.bgBlue("\nYour DOB is not a prime number!\nThank\'s alot for helping me to test my Math "+userName+"!!"));
+      keepPlaying();
       break;
       }
       }
  }
  if(isPrime==true && date!=1){
    console.log(chalk.bgCyan("\nYour DOB is a prime number!\nThank\'s alot for helping me to test my Math "+userName+"!!"));
+   keepPlaying();
+   
  }}xyz();
+
+ console.log("\n")
+function keepPlaying(){
+if(readlineSync.keyInYN("Would you like to check again?\n")){
+  xyz();
+}else{
+  console.log("\nThank you!")
+}
+}
